@@ -11,7 +11,7 @@
     --border-gray: #e0e0e0;
 }
 
-body, html {
+body, html, main {
     overflow-x: hidden;
 }
 
@@ -20,6 +20,11 @@ body, html {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+}
+
+section h3 {
+    font-size: 1.4rem;
+    font-weight: 400;
 }
 
 h1 {
@@ -32,6 +37,19 @@ p {
 
 h1, h2, h3, h4 { 
     color: var(--main-color);
+}
+
+section.work-detailed h3, section.work-detailed h4 {
+    font-weight: 500;
+    margin: 5px 0;
+}
+
+section.work-detailed h3 {
+    font-size: 1.875rem;
+}
+
+section.work-detailed h4 {
+    font-size: 1.5rem;
 }
 
 .content button {
@@ -106,11 +124,6 @@ header ul li a.active {
 
 section {
     padding: 32px 0;
-}
-
-section h3 {
-    font-size: 1.4rem;
-    font-weight: 400;
 }
 
 .section-header h2 {
@@ -279,6 +292,15 @@ footer nav ul {
     background-image: url('../img/teenyicons_telegram-solid (1).svg');
 }
 
+.work-detailed img {
+    margin: 30px 0;
+    width: 100%;
+}
+
+.work-detailed .first-img {
+    margin: 50px 0;
+}
+
 @media screen and (max-width: 900px) {
     .container {
         max-width: 90%;
@@ -389,12 +411,17 @@ button.burger.open .line-3 {
         padding: 20px 10px;
         width: 100px;
 
-        right: -100%;
+        transform: translateY(100px);
+        opacity: 0;
+        pointer-events: none;
+
         transition: .3s;
     }
 
     header ul.menu.open {
-        right: 0;
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: all;
     }
 
     button.burger {
