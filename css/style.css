@@ -377,6 +377,13 @@ button.burger {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+
+    transform: translateX(0);
+    transition: .3s;
+}
+
+button.burger.open {
+    transform: translateX(-20px);
 }
 
 button.burger .line {
